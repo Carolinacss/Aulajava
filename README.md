@@ -1,13 +1,9 @@
 # Tipos de Dados do Java
 
-***Tipo de elementos visuais do Android Visual studio***
-
-
-
 ## *_Primitivos_*
  > ***Números Inteiros***
 
-+ **byte**
+ **byte**
 
 O tipo de dado byte pode ter valores inteiros ou negativos e requer 8 bits para serem implementados. Sua faixa de valor está entre -128 até 127. Seu valor padrão é 0 (zero). Usado para salvar em memória grandes matrizes, economizando espaço porque um byte é quatro vezes menor que um número inteiro. Também pode ser usado no lugar de tipos de dados "int". 
 ```
@@ -137,7 +133,7 @@ tipo do objeto, como String, Integer, etc. [] nome de nosso array
 # Estrutura de repetição do java
 **For**
 
-O for é uma estrutura de repetição, tambem chamada na tradução literal para a língua portuguesa “para”, que o mesmo permite que uma variável auxilie o controle da quantidade de repetições a serem executadas, sendo essas informações declarada no primeiro comando. Em seguida define até quando o for sera executado, onde normalmente é uma condição booleana em cima da variável de controle. Após isso indica o quanto a variável de controle será modificada no final de cada execução dentro do for.
+O for é uma estrutura de repetição, na tradução literal para a língua portuguesa “para”, que permite que uma variável auxilie o controle da quantidade de repetições a serem executadas, sendo essas informações declarada no primeiro comando. Em seguida define até quando o for será executado, onde normalmente é uma condição booleana em cima da variável de controle. Após isso indica o quanto a variável de controle será modificada no final de cada execução dentro do for.
 
 
 ```
@@ -182,13 +178,11 @@ ___
 
 **if. else**
 
-O if/else é uma estrutura de condição em que uma expressão booleana é analisada. Quando a condição que estiver dentro do if for verdadeira, ela é executada. Já o else é utilizado para definir o que é executado quando a condição analisada pelo if for falsa. Caso o if seja verdadeiro e, consequentemente executado, o else não é executado.
-
-O if pode ser utilizado em conjunto com o else ou até mesmo sozinho, caso necessário.
-
-Abaixo, temos um exemplo onde o if é utilizado em conjunto com o else.
+O if/se ou else/senao, são estruturas de condição em que uma expressão booleana é analisada, sempre teremos dois caminhos a seguir, um verdadeiro e outro falso. Quando a condição que estiver dentro do if for verdadeira, ela é executada. Já o else é utilizado para definir o que é executado quando a condição analisada pelo if for falsa. Caso o if seja verdadeiro e, consequentemente executado, o else não é executado. O if pode ser utilizado em conjunto com o else ou até mesmo sozinho, caso necessário.
 
 ```
+Exemplo: 
+
 package br.com.treinaweb;
 
 public class Exemplo {
@@ -196,7 +190,8 @@ public class Exemplo {
     public static void main(String[] args) {
         int resposta = 10;
         if (resposta == 10) {
-            // Se a variável for igual a 10, a frase abaixo será escrita
+            // Se a variável for igual a 10, a frase 
+             abaixo será escrita
             System.out.println(“Você acertou!”);
         } else {
             // Caso contrário, a frase abaixo será escrita
@@ -206,20 +201,6 @@ public class Exemplo {
 	
 }
 ```
-
-
-
-
-As condicionais if/else tem o comportamento booleano, ou seja, sempre teremos dois caminhos a seguir, um verdadeiro e outro falso. Desse modo, a palavra “if” significa “se” e a palavra “else” significa “senão”. Logo, é possível concluir em quais situações podemos usar as estruturas condicionais. Veja o exemplo a seguir:
-
-Nesse primeiro exemplo, temos uma condição de que a variável idade seja maior do que 18. Se isso ocorre, a mensagem “A entrada é permitida” é printada no console. Caso essa condição não seja atendida, nada irá acontecer.
-
-Já para o segundo exemplo, a situação é semelhante, porém, caso a condição não seja atendida, a mensagem “Entrada negada” será printada no console.
-
-
-
-
-
 
 **switch case**
 
@@ -252,7 +233,95 @@ public class Exemplo {
 	
 }
 ```
+___
+# Tipos de elementos visuais do Android Studio
+> **Views Básicas**
+  
+  View é um retângulo na tela que mostra algum conteúdo composta de componentes básicos que juntas formam o layout da interface.
 
+**ImageView**: Exibe uma imagem, pode ser usado para a exibição de recursos armazenados no aplicativo ou de imagens que são baixadas da internet.
+```
+<ImageView
+    android:src="@drawable/imagem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scaleType="center"/>
+```
+
+
+**TextView**: Exibe textos, texto formatado, hyperlinks, números de telefone, e-mails e outras funcionalidades úteis.
+```
+<TextView
+    android:text="Olá Androideiro!"
+    android:background="@android:color/darker_gray"
+    android:layout_width="150dp"
+    android:layout_height="75dp" />
+```
+
+**Button**: Exibe botões e responde a cliques do usuário e chama um método em seu código para que possa responder.
+```
+<Button
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:text="Meu Botão"
+     android:onClick="clicar" />
+```
+
+**ImageButton**: Exibe uma imagem com a ação do botão.
+```
+<ImageButton
+    android:id="@+id/imageButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/imagem" />
+```
+
+**EditText**: Um campo de texto que pode ser editado.
+```
+<EditText
+    android:id="@+id/email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Preencha seu melhor email..."
+    android:inputType="textEmailAddress" />
+```
+
+**ListView**: Exibir uma coleção de itens de forma linear em uma única coluna. Cada item individual pode ser selecionado para a exibição de mais detalhes ou realizar uma ação relacionada a esse item.
+```
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listview"
+    android:layout_width="match_content"
+    android:layout_height="match_content" />
+```
+
+> **Pickers Views.**
+
+Componentes especiais que permitem ao usuário selecionar os dados de forma específica. Por exemplo definir data e hora. Pode possuir Rótulo opcional que só aparece quando o seletor está no modo leitura, com o objetivo de oferecer mais contexto.
+
+
+>**Menus.**
+
+Componentes comuns que precisa usar APIs (Interface de Programação de Aplicação) de Menu para apresentar ações de usuário e outras opções nas suas atividades.
+
+**Menu "opções" e barra de apps.**
+
+O menu "opções" é a coleção principal de itens de menu para uma atividade e coloca as ações que têm impacto global no app, como "Pesquisar", "Escrever e-mail" e "Configurações".
+
+**Menu de contexto.**
+
+Sendo um menu flutuante que aparece quando o usuário realiza um clique longo em um elemento. Ele fornece ações que afetam o conteúdo selecionado ou o frame do contexto.
+
+**Modo de ação contextual.**
+
+Exibe os itens de ação que afetam o conteúdo selecionado em uma barra no topo da tela e permite que o usuário selecione vários itens.
+
+**Menu pop-up.**
+
+Um menu pop-up exibe itens em uma lista vertical ancorada à visualização que apresentou o menu, podendo fornecer ações adicionais relacionadas ao conteúdo específico ou opções de fornecimento de uma segunda parte de um comando. As ações em um menu pop-up não afetam diretamente o conteúdo, também serve para ações estendidas que relacionam as regiões de conteúdo na atividade.
+
+>**Extras**
+
+componentes especiais com funções muito específicas.
 
 
  # REFERENCIAS
@@ -282,3 +351,16 @@ https://glysns.gitbook.io/java-basico/controle-de-fluxo/estruturas-de-repeticao
 https://glysns.gitbook.io/java-basico/controle-de-fluxo/estruturas-condicionais
 
 https://comoprogramarjava.com.br/frameworks/java-base/if-else-java-estruturas-condicionais/
+
+https://developer.android.com/training/wearables/compose/pickers?hl=pt-br
+
+https://www.devmedia.com.br/android-design-componentes-visuais-da-plataforma-android/31524
+
+https://www.androidpro.com.br/blog/desenvolvimento-android/android-views-intro/
+
+https://developer.android.com/guide/topics/ui/declaring-layout?hl=pt-br
+
+https://learn.microsoft.com/pt-br/xamarin/xamarin-forms/platform/android/?source=recommendations
+
+https://developer.android.com/guide/topics/ui/menus?hl=pt-br
+
