@@ -238,8 +238,12 @@ ___
 > **Views Básicas**
   
   View é um retângulo na tela que mostra algum conteúdo composta de componentes básicos que juntas formam o layout da interface.
+  
+  A ViewGroup é uma view especial que pode conter outras views (chamadas filhas). O grupo é a classe base para layouts e contêineres de views. 
 
-**ImageView**: Exibe uma imagem, pode ser usado para a exibição de recursos armazenados no aplicativo ou de imagens que são baixadas da internet.
+**ImageView** 
+
+Exibe uma imagem, pode ser usado para a exibição de recursos armazenados no aplicativo ou de imagens que são baixadas da internet.
 ```
 <ImageView
     android:src="@drawable/imagem"
@@ -247,9 +251,17 @@ ___
     android:layout_height="wrap_content"
     android:scaleType="center"/>
 ```
+**ImageSwitcher**
 
+Alterna entre dois ImageViews quando uma nova imagem é definida nele. As exibições adicionadas a um ImageSwitcher devem ser todas ImageViews.
+```
+public class ImageSwitcher
+extends ViewSwitcher
+```
 
-**TextView**: Exibe textos, texto formatado, hyperlinks, números de telefone, e-mails e outras funcionalidades úteis.
+**TextView**
+
+ Exibe textos, texto formatado, hyperlinks, números de telefone, e-mails e outras funcionalidades úteis.
 ```
 <TextView
     android:text="Olá Androideiro!"
@@ -257,8 +269,24 @@ ___
     android:layout_width="150dp"
     android:layout_height="75dp" />
 ```
+**AutoCompleteTextView**
 
-**Button**: Exibe botões e responde a cliques do usuário e chama um método em seu código para que possa responder.
+Uma exibição de texto editável que mostra sugestões de conclusão automaticamente enquanto o usuário está digitando.
+```
+public class AutoCompleteTextView
+extends EditText implements Filter.FilterListener
+```
+**TextSwitcher**
+
+Especializa ViewSwitcher que contém apenas views do tipo TextView. Sendo útil para animar um rótulo na tela.
+```
+public class TextSwitcher
+extends ViewSwitcher
+```
+
+**Button**
+
+ Exibe botões e responde a cliques do usuário e chama um método em seu código para que possa responder.
 ```
 <Button
      android:layout_height="wrap_content"
@@ -267,7 +295,9 @@ ___
      android:onClick="clicar" />
 ```
 
-**ImageButton**: Exibe uma imagem com a ação do botão.
+**ImageButton**
+
+Exibe uma imagem com a ação do botão.
 ```
 <ImageButton
     android:id="@+id/imageButton"
@@ -276,7 +306,9 @@ ___
     android:src="@drawable/imagem" />
 ```
 
-**EditText**: Um campo de texto que pode ser editado.
+**EditText**
+
+ Um campo de texto que pode ser editado.
 ```
 <EditText
     android:id="@+id/email"
@@ -286,7 +318,9 @@ ___
     android:inputType="textEmailAddress" />
 ```
 
-**ListView**: Exibir uma coleção de itens de forma linear em uma única coluna. Cada item individual pode ser selecionado para a exibição de mais detalhes ou realizar uma ação relacionada a esse item.
+**ListView**
+
+ Exibir uma coleção de itens de forma linear em uma única coluna. Cada item individual pode ser selecionado para a exibição de mais detalhes ou realizar uma ação relacionada a esse item.
 ```
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/listview"
@@ -319,10 +353,28 @@ Exibe os itens de ação que afetam o conteúdo selecionado em uma barra no topo
 
 Um menu pop-up exibe itens em uma lista vertical ancorada à visualização que apresentou o menu, podendo fornecer ações adicionais relacionadas ao conteúdo específico ou opções de fornecimento de uma segunda parte de um comando. As ações em um menu pop-up não afetam diretamente o conteúdo, também serve para ações estendidas que relacionam as regiões de conteúdo na atividade.
 
->**Extras**
+>**CheckBox**
 
-componentes especiais com funções muito específicas.
+Uma caixa de seleção é um tipo específico de botão de dois estados que pode ser marcado ou desmarcado. Como por exemplo lista de compras.
+```
+public class CheckBox
+extends CompoundButton
+```
+>**RadioButton**
 
+Sendo um botão de dois estados que pode ser marcado ou desmarcado. Quando o botão de rádio está desmarcado, o usuário pode pressioná-lo ou clicar nele para marcá-lo. No entanto, ao contrário de um CheckBox, um botão de opção não pode ser desmarcado pelo usuário depois de marcado.
+
+```
+public class RadioButton
+extends CompoundButton
+```
+>**Spinner**
+
+Uma exibição que exibe uma view por vez e permite que o usuário escolha entre eles. Os itens no Spinner vêm de adaptações associadas a esta visualização.
+```
+public class Spinner
+extends AbsSpinner implements DialogInterface.OnClickListener
+```
 
  # REFERENCIAS
  
