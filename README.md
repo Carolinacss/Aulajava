@@ -353,14 +353,14 @@ Exibe os itens de ação que afetam o conteúdo selecionado em uma barra no topo
 
 Um menu pop-up exibe itens em uma lista vertical ancorada à visualização que apresentou o menu, podendo fornecer ações adicionais relacionadas ao conteúdo específico ou opções de fornecimento de uma segunda parte de um comando. As ações em um menu pop-up não afetam diretamente o conteúdo, também serve para ações estendidas que relacionam as regiões de conteúdo na atividade.
 
->**CheckBox**
+**CheckBox**
 
 Uma caixa de seleção é um tipo específico de botão de dois estados que pode ser marcado ou desmarcado. Como por exemplo lista de compras.
 ```
 public class CheckBox
 extends CompoundButton
 ```
->**RadioButton**
+**RadioButton**
 
 Sendo um botão de dois estados que pode ser marcado ou desmarcado. Quando o botão de rádio está desmarcado, o usuário pode pressioná-lo ou clicar nele para marcá-lo. No entanto, ao contrário de um CheckBox, um botão de opção não pode ser desmarcado pelo usuário depois de marcado.
 
@@ -368,7 +368,7 @@ Sendo um botão de dois estados que pode ser marcado ou desmarcado. Quando o bot
 public class RadioButton
 extends CompoundButton
 ```
->**Spinner**
+**Spinner**
 
 Uma exibição que exibe uma view por vez e permite que o usuário escolha entre eles. Os itens no Spinner vêm de adaptações associadas a esta visualização.
 ```
